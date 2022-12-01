@@ -28,6 +28,7 @@ RSpec.describe MediaInfo::Tracks::Attributes do
       context 'when the submitted value is a string with a String value' do
         it 'remains a String' do
           expect(MediaInfo.from(xml_files_content[:sample_iphone_mov]).general.extra.com_apple_quicktime_software).to eq('11.2.6')
+          expect(MediaInfo.from(xml_files_content[:sample_iphone_mov]).general.extra.com_apple_quicktime_cinematic_video).to eq('Binary Data')
           expect(MediaInfo.from(xml_files_content[:multiple_streams_no_id]).video.bitrate).to_not be_a(Float)
         end
       end
